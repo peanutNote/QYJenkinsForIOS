@@ -13,6 +13,8 @@
 		1EFDE6471C29670300AA8C90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EFDE6451C29670300AA8C90 /* Main.storyboard */; };
 		1EFDE6491C29670300AA8C90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EFDE6481C29670300AA8C90 /* Assets.xcassets */; };
 		1EFDE64C1C29670300AA8C90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EFDE64A1C29670300AA8C90 /* LaunchScreen.storyboard */; };
+		1EFDE6551C29881B00AA8C90 /* demo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EFDE6531C29881B00AA8C90 /* demo1.png */; };
+		1EFDE6561C29881B00AA8C90 /* demo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EFDE6541C29881B00AA8C90 /* demo2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		1EFDE6481C29670300AA8C90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1EFDE64B1C29670300AA8C90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1EFDE64D1C29670300AA8C90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EFDE6531C29881B00AA8C90 /* demo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo1.png; sourceTree = "<group>"; };
+		1EFDE6541C29881B00AA8C90 /* demo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				1EFDE6481C29670300AA8C90 /* Assets.xcassets */,
 				1EFDE64A1C29670300AA8C90 /* LaunchScreen.storyboard */,
 				1EFDE64D1C29670300AA8C90 /* Info.plist */,
+				1EFDE6531C29881B00AA8C90 /* demo1.png */,
+				1EFDE6541C29881B00AA8C90 /* demo2.png */,
 				1EFDE63C1C29670300AA8C90 /* Supporting Files */,
 			);
 			path = QYJenkinsForIOS;
@@ -138,6 +144,8 @@
 			files = (
 				1EFDE64C1C29670300AA8C90 /* LaunchScreen.storyboard in Resources */,
 				1EFDE6491C29670300AA8C90 /* Assets.xcassets in Resources */,
+				1EFDE6561C29881B00AA8C90 /* demo2.png in Resources */,
+				1EFDE6551C29881B00AA8C90 /* demo1.png in Resources */,
 				1EFDE6471C29670300AA8C90 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +270,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = QYJenkinsForIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qianye.QYJenkinsForIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -273,6 +282,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = QYJenkinsForIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qianye.QYJenkinsForIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -298,6 +308,7 @@
 				1EFDE6521C29670300AA8C90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
