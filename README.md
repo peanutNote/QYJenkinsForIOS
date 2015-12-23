@@ -54,5 +54,12 @@ Jenkins 是一个开源项目，提供了一种易于使用的持续集成系统
 	* Environment variables：PATH为自己机器的PATH路径
 	* Tool Locations：本地git路径，如果不填写如果使用git仓库无法下载代码
 * 点击save，接下来就是用自己的电脑去服从（链接）该协议（节点），命令行执行`javaws YourJenkinsAddress/computer/iOS-Slave/slave-agent.jnlp`，知识后Jenkins上显示已经链接上
-* 接着在Jenkins master下新建Item，在该item配置中勾选“Restrict where this project can be run”并在“Label Expression”后面填写前面创建的节点名称，这里要编译Xcode项目还需要下载一个插件“Xcode integration”，在“构建“”增加构建步骤中选择Xcode“，之后的配置可以参考[博客](https://blog.codecentric.de/en/2012/01/continuous-integration-for-ios-projects-with-jenkins-ci/)即可
+* 接着在Jenkins master下新建Item，在该item配置中勾选“Restrict where this project can be run”并在“Label Expression”后面填写前面创建的节点名称，这里要编译Xcode项目还需要下载一个插件“Xcode integration”，在“构建“”增加构建步骤“中选择Xcode“，可以参考[博客](https://blog.codecentric.de/en/2012/01/continuous-integration-for-ios-projects-with-jenkins-ci/)即可
 * 最后就可以在制定的文件夹里生产想要的.ipa文件了，总得来说算是小成功了，但是还有很多配置都是云里雾里还有待继续研究
+
+##有关CocoaPods项目使用Jenkins打包
+![image](https://github.com/peanutNote/QYJenkinsForIOS/blob/master/QYJenkinsForIOS/demo3.png)
+
+* 上面介绍的主要是没有使用CocoaPods的项目，项目workspace包含一个.xcodeproj,这种情况可以填一个指定的“Target”（如果不填则针对所有的target），主要配置参考上图
+* 包含CocoaPods的项目则不能使用target，正如我们所知项目集成CocoaPods后需要点击YourProjectName.xcworkspace来打开项目，这个.xcworkspace文件其实就是一个workspace，它里面包含多个scheme，因此我们需要配置“Advanced Xcode build options”
+![image](https://github.com/peanutNote/QYJenkinsForIOS/blob/master/QYJenkinsForIOS/demo4.png)
