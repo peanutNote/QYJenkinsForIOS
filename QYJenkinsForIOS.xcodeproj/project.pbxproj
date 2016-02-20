@@ -298,7 +298,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chemanman.shipper.client;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7c8dcd6b-2a3c-4201-bb30-bd9c9068e491";
 			};
 			name = Release;
 		};

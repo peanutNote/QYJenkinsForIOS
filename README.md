@@ -53,7 +53,7 @@ Jenkins 是一个开源项目，提供了一种易于使用的持续集成系统
 	* 远程工作目录：为你本地创建的一个用来存放代码以及生产打包产品的绝对目录（也可以是相对路劲具体看说明）
 	* Environment variables：PATH为自己机器的PATH路径
 	* Tool Locations：本地git路径，如果不填写如果使用git仓库无法下载代码
-* 点击save，接下来就是用自己的电脑去服从（链接）该协议（节点），命令行执行`javaws YourJenkinsAddress/computer/iOS-Slave/slave-agent.jnlp`，知识后Jenkins上显示已经链接上
+* 点击save，接下来就是用自己的电脑去服从（链接）该协议（节点），命令行执行`javaws YourJenkinsAddress/computer/iOS-Slave/slave-agent.jnlp`(这个是在jenkins没有加访问权限的时候，如果有访问权限则还要下载一个slave.jar的文件才可以执行上面的命令)，链接后Jenkins上显示已经链接上
 * 接着在Jenkins master下新建Item，在该item配置中勾选“Restrict where this project can be run”并在“Label Expression”后面填写前面创建的节点名称，这里要编译Xcode项目还需要下载一个插件“Xcode integration”，在“构建“”增加构建步骤“中选择Xcode“，可以参考[博客](https://blog.codecentric.de/en/2012/01/continuous-integration-for-ios-projects-with-jenkins-ci/)即可
 * 最后就可以在制定的文件夹里生产想要的.ipa文件了，总得来说算是小成功了，但是还有很多配置都是云里雾里还有待继续研究
 
