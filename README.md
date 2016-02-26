@@ -63,3 +63,22 @@ Jenkins 是一个开源项目，提供了一种易于使用的持续集成系统
 * 上面介绍的主要是没有使用CocoaPods的项目，项目workspace包含一个.xcodeproj,这种情况可以填一个指定的“Target”（如果不填则针对所有的target），主要配置参考上图
 * 包含CocoaPods的项目则不能使用target，正如我们所知项目集成CocoaPods后需要点击YourProjectName.xcworkspace来打开项目，这个.xcworkspace文件其实就是一个workspace，它里面包含多个scheme，因此我们需要配置“Advanced Xcode build options”
 ![image](https://github.com/peanutNote/QYJenkinsForIOS/blob/master/QYJenkinsForIOS/demo4.png)
+
+##后期遇到的问题
+这几天测试找我们打了好几次包，因为之前jenkins已经弄好了就想着让测试使用jenkins自己打包测试。可是有个问题就是测试一般想测试的端口号跟服务端的代码url和端口号都往往不一样，需要修改才行。这个修改对于我们来说不得不停下手头工作将切换到其他分支修改后上传（该分支为开发分支，上传代码还得改过来，总之就是各种不方便），最后我就想能不能在jenkins将代码下载下来后将包含网址的文件中的url以及端口改过来，在同事的帮助下我实现了这段代码。在jenkins中Execute shell的脚本是:  
+cd CMMShipper  
+pod update  
+cd CMMShipper/Supporting\ Files/  
+./setServerHost http://xxx  
+
+前面两行不用解释，主要是后面两句，我将脚本文件setServerHost放在了Supporting Files文件夹下。意思是进入setServerHost文件目录下，执行脚本setServerHost并输入参数http://xxx。setServerHost中的内容是：  
+"#!/bin/bash  
+file_path="../Utils/BaseConfig/MMGlobeDefine.h"  
+sed "13s#http.*php#$1#" $file_path > tmp  
+cat tmp > $file_path  
+rm tmp"  
+file_path：指定需要修改的文件路径  
+第二行 ：为在指定文件中的第13行替换以http开头php结尾的内容为输入的内容http://xxx 并且将替换后的内容存到tmp文件,#http...php#是正则表达式，后面的$1表示输入的内容  
+第三行：将tmp中的内容覆盖（不是追加 “>>”表示追加）到指定文件中  
+第四行：删除tmp文件
+ sed命令的标准用法可以自行搜索，至于为什么用”和#何以参看[博客](http://blog.chinaunix.net/uid-25505925-id-3321133.html)
