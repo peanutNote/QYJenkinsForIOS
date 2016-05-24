@@ -78,7 +78,7 @@ sed "13s#http.*php#$1#" $file_path > tmp
 cat tmp > $file_path  
 rm tmp"  
 file_path：指定需要修改的文件路径  
-第二行 ：为在指定文件中的第13行替换以http开头php结尾的内容为输入的内容http://xxx 并且将替换后的内容存到tmp文件,#http...php#是正则表达式，后面的$1表示输入的内容  
+第二行 ：为在指定文件中的第13行替换以http开头php结尾的内容为输入的内容http://xxx 并且将替换后的内容存到tmp文件,#http...php#是正则表达式，后面的$1表示输入的内容（注意如果要匹配数字的话不能用\d 而要用[0-9]）    
 第三行：将tmp中的内容覆盖（不是追加 “>>”表示追加）到指定文件中  
 第四行：删除tmp文件
  sed命令的标准用法可以自行搜索，至于为什么用”和#何以参看[博客](http://blog.chinaunix.net/uid-25505925-id-3321133.html)
